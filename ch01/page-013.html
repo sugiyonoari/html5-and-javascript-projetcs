@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>HTML5 Logo</title>
+	<meta charset="UTF-8">
+	<script>
+		function init() {
+			// Drawing Paths on Canvas
+			ctx = document.getElementById('canvas').getContext('2d');
+			ctx.fillStyle = "#E34C26";
+			ctx.beginPath();
+			ctx.moveTo(39, 250);
+			ctx.lineTo(17, 0);
+			ctx.lineTo(262, 0);
+			ctx.lineTo(239, 250);
+			ctx.lineTo(139, 278);
+			ctx.closePath();
+			ctx.fill();
+			// Catatan:
+			// sebelum jalankan fungsi filXXX apapun, jalan kun dulu
+			// fungsi untuk mengatur field/properties canvas object.
+			// ref: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/translate
+			
+			// Coordinate Transformations
+			var offsety = 90;
+			ctx.translate(0, offsety);
+			// Placing Text on Canvas and in the Body of a Document
+			var fontfamily = "65px 'Gill Sans Ultra Bold', sans-serif";
+			ctx.font = fontfamily;
+			ctx.fillStyle = "#000000";
+			ctx.fillText("HTML", 50,60);
+
+			// 5 sided orange background
+			// ctx.fillStyle = "#E34C26";
+			// ctx.beginPath();
+			// ctx.moveTo(39, 250);
+			// ctx.lineTo(17, 0);
+			// ctx.lineTo(262, 0);
+			// ctx.lineTo(239, 250);
+			// ctx.lineTo(139, 278);
+			// ctx.closePath();
+			// ctx.fill();
+
+			// right hand, lighter orange part of the background
+			// ctx.fillStyle = "#F06529";
+			// ctx.beginPath();
+			// ctx.moveTo(139, 257);
+			// ctx.lineTo(220, 234);
+			// ctx.lineTo(239, 20);
+			// ctx.lineTo(139, 20);
+			// ctx.closePath();
+			// ctx.fill();
+		}
+	</script>
+	<style>
+		footer {
+			display: block;
+			border-top: 1px solid #a37a30;
+			margin: 10px;
+			font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+			font-weight:
+				bold;
+		}
+
+		article {
+			display: block;
+			font-family: Georgia, "Times New Roman", Times, serif;
+			margin: 5px;
+		}
+	</style>
+</head>
+
+<body onLoad="init();">
+	<canvas id="canvas" width="600" height="400">
+		Your browser does not support the canvas element.
+	</canvas>
+	<article>
+		Test
+	</article>
+	<footer>
+		Test
+	</footer>
+</body>
+
+</html>
